@@ -4,8 +4,6 @@
 
 ![](https://img.shields.io/github/release/archive/github-actions-slack/all.svg)
 ![](https://snyk.io/test/github/archive/github-actions-slack/badge.svg)
-![](https://api.codiga.io/project/30889/status/svg)
-![](https://api.codiga.io/project/30889/score/svg)
 
 This Action allows you to send messages (and reactions/threads/update/blocks) to Slack from your Github Actions. Supports Slack's required arguments as well as all the optional once. It's JavaScript-based and thus fast to run.
 
@@ -51,7 +49,7 @@ This action supports:
 
 - `slack-channel` - The channel/channels where you want the message (comma separated)
 
-- `slack-text` - The text of the message (or use `slack-blocks`)
+- `slack-text` - The text of the message (or use `slack-optional-blocks`)
 
 **Optional: Github Action Parameters:**
 

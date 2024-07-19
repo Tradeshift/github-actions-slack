@@ -1,4 +1,4 @@
-name: test-11-slack-message-blocks
+name: test-13-slack-message-blocks
 
 on: [push, issues]
 
@@ -6,23 +6,24 @@ jobs:
   slack-action:
     #if: ${{ false }}
     runs-on: ubuntu-20.04
-    name: Test 11 [ubuntu-20.04]
+    name: Test 13 [ubuntu-20.04]
 
     steps:
-      - name: Send Slack Message (Blocks)
+      - name: Send Slack Message (Blocks - Different Key Name)
         uses: archive/github-actions-slack@master
         id: send-message
         with:
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
-          slack-channel: C046J5U2RGC
-          slack-optional-blocks: >-
+          slack-channel: C06G1B1KLMU
+          # This is an old format, the correct one is "slack-optional-blocks"
+          slack-blocks: >-
             [
               {
                 "block_id": "text1",
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "Building repo *product-service*"
+                  "text": "TEST *TEST*"
                 }
               },
               {
@@ -33,13 +34,8 @@ jobs:
                 "type": "context",
                 "elements": [
                   {
-                    "type": "image",
-                    "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1200px-Flag_of_Sweden.svg.png",
-                    "alt_text": "images"
-                  },
-                  {
                     "type": "plain_text",
-                    "text": "Estimated time: 1 min"
+                    "text": "TEST..."
                   }
                 ]
               },
